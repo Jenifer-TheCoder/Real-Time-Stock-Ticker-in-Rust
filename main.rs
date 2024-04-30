@@ -32,7 +32,7 @@ struct Overview {
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     let symbol = "GOOGL";
-    let api_key = "K0NP2ILY2P9VDX36";//std::env::var("API_KEY").expect("API_KEY environment variable not found");
+    let api_key = std::env::var("API_KEY").expect("API_KEY environment variable not found");
     let global_quote_url = format!(
         "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={}&apikey={}",
         symbol, api_key
